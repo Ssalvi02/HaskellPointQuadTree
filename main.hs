@@ -1,39 +1,15 @@
-import Foreign.Ptr
-
--- AKA => Point
-data City = City { 
+data Group = Empty | Group {
+    idf :: Int,
     name :: String,
-    id :: Int,
-    x :: Int,
-    y :: Int
-} deriving (Show)
-
--- Nó para armazenar objetos
-data Node = Node {
-    c :: City,
-    mem :: Int
-} deriving (Show)
-
--- Quadtree
-data Qtree = Qtree {
-    -- fronteiras do nó
-    top_left :: City,
-    bot_right :: City,
-
-    -- detalhes do nó
-    n :: Ptr Node,
-
-    -- filhos da arvore
-    top_lt :: Ptr Qtree,
-    top_rt :: Ptr Qtree,
-    bot_lt :: Ptr Qtree,
-    bot_lr :: Ptr Qtree
-
-}
-
+    lat :: Int,
+    long :: Int,
+    nw :: Maybe Group,
+    ne :: Maybe Group,
+    sw :: Maybe Group,
+    se :: Maybe Group
+} deriving Show
 
 
 main = do
-    let c1 = City "Louisville" 1 38 85
-    let n1 = Node c1 23
-    print $ mem n1
+    let g1 = Group { idf = 0, name = "Ababa", lat = 32, long = 40, nw = Nothing, ne = Nothing, sw = Nothing, se = Nothing}
+    print g1
