@@ -11,5 +11,6 @@ data Group = Empty | Group {
 
 
 main = do
-    let g1 = Group { idf = 0, name = "Ababa", lat = 32, long = 40, nw = Nothing, ne = Nothing, sw = Nothing, se = Nothing}
+    -- let g1 = Group { idf = 0, name = "Ababa", lat = 32, long = 40, nw = Nothing, ne = Nothing, sw = Nothing, se = Nothing}
+    -- let g1 = Group { idf = 0, name = "Ababa", lat = 32, long = 40, nw = Empty, ne = Empty, sw = Empty, se = Empty}
     print g1
